@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<main>
+			<!-- 
+			v-model es una DIRECTIVA.
+			Para crearlas v-[NOMBRE_DIRECTIVA] siendo [NOMBRE_DIRECTIVA] el identificador asignado
+			-->
+			<input v-model="mensaje" class="animated bounceInLeft">
+			<p class="animated fadeIn">{{ mensaje }}</p>
+			<button v-on:click="cambiarMensaje">Cambiarlo en JS</button>			
+			<p>{{ $data }}</p>
+		</main>
+		<script src="v_model_one.js"></script>
+	</body>
+</html>
