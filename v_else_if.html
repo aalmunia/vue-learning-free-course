@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+
+		<!-- IMPORTANTE: v-else tiene que estar tras un v-if, no puede estar de solitronchis -->
+		<main>
+			<div v-if="letra === 'A'">La letra escoGida es A (mis hogos)</div>
+			<div v-else-if="letra === 'B'">La letra escoGida es la B</div>
+			<div v-else-if="letra === 'C'">La letra escoGida es la C</div>
+			<div v-else>No has escoGido ninguna letra</div>
+			<br />
+			<button v-on:click="cambiarLetra('B')">EscoGer B</button>
+			<button v-on:click="cambiarLetra('C')">EscoGer C</button>
+			<button v-on:click="cambiarLetra('A')">EscoGer A</button>
+			<button v-on:click="cambiarLetra('Z')">EscoGer Z</button>
+		</main>
+
+	<script src="v_else_if.js"></script>
+	</body>
+</html>

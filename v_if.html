@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+
+		<!-- IMPORTANTE: v-if hace que el elemento SE QUITE DEL DOM, no pone style display none, que es lo que hace v-show -->
+		<main v-if="mensaje">
+			<div>La condición de la directiva v-if es true</div>
+		</main>
+
+	<script src="v_if.js"></script>
+	</body>
+</html>
