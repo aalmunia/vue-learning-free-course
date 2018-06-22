@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Componentes parte 2, templates</title>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<main>
+			<segundo-componente></segundo-componente>
+		</main>
+	<script type="text/template" id="mi-plantilla">
+		<div>
+			<h1>SEGUNDO COMPONENTE</h1>
+			<p>Esto es otro componente</p>
+			<p>Para repetir tanto como se necesite</p>
+			<p>Esto siguiente es un miembro de data: </p>
+			<p><b>{{ nuevoTexto }}</b></p>
+		</div>
+	</script>
+	<script src="componentes_two_templates.js"></script>
+	</body>
+</html>

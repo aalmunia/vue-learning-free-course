@@ -37,8 +37,9 @@
 				<li class="animated bounceInLeft" 
 					v-for="(video, indice) in videos"
 					v-on:click="playVideo(video)"
-					:class="{activo: video.activo}">
-					<div class="titulo">
+					:class="{activo: video.activo}"
+					v-on:contextmenu.prevent="delVideo(video)">
+					<div class="titulo" :title="video.titulo">
 						{{ video.titulo }}
 					</div>
 				</li>
@@ -46,11 +47,7 @@
 		</div>
 
 		<iframe width="600" height="600" id="rpd" allow="autoplay" :src="videoActivo"></iframe>
-
-		<br/>
-
 		<button v-on:click="clearVideosCache">Limpiar caché de vídeos</button>
-
 		<div>
 			<pre>Datos del objeto: {{ $data }}</pre>
 		</div>

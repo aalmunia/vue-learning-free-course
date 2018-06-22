@@ -31,24 +31,28 @@ var vm = new Vue({
 					titulo: this.elTitulo,
 					activo: false
 				});
-				localStorage.setItem('vue_youtube_app_data', JSON.stringify(this.videos));
+				this.saveVideosLocalStorage();
 				this.laURL = this.elTitulo = '';
 			}
+		},
+		saveVideosLocalStorage: function() {
+			localStorage.setItem('vue_youtube_app_data', JSON.stringify(this.videos));
 		},
 		playVideo: function(video) {
 			let laURL = video.url;
 			let nuevaURL = laURL.replace('watch?v=', 'embed/');
 			this.videoActivo = nuevaURL + '?autoplay=1';
-			this.videos.map((video) => { 
-				video.activo = false; 
-				// console.log(video);
-			});
+			this.videos.map((video) => { video.activo = false; });
 			video.activo = true;
 		},
 		clearVideosCache: function() {
 			localStorage.removeItem('vue_youtube_app_data');
 			this.videos = [];
 			this.videoActivo = '';
+		},
+		delVideo: function(video) {
+			this.videos.splice(this.videos.indexOf(video), 1);
+			this.saveVideosLocalStorage();
 		}
 	}
 });
