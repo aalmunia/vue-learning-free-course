@@ -17,10 +17,7 @@ var vm = new Vue({
 			this.tareas = [];
 		},
 		completarTarea: function(index) {
-			this.tareas[index].completada = true;
-		},
-		descompletarTarea: function(index) {
-			this.tareas[index].completada = false;
+			this.tareas[index].completada = !this.tareas[index].completada;
 		}
 	}
 });

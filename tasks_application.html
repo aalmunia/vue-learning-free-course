@@ -8,19 +8,22 @@
 		<main>
 			<div id="misTareas">
 				<h1>Mis tareas</h1>
-				<div v-for="(laTarea, indice) in tareas">
-					<b>Descripción de la tarea: </b>
-					<i>{{ laTarea.text }}</i>
-					<b>¿Completada?</b>
-					<i>{{ laTarea.completada }}</i>
-					<button v-on:click="completarTarea(indice)">Completar</button>
-					<button v-on:click="descompletarTarea(indice)">No completa</button>
+				<div>
+					<ul>
+						<li class="animated bounceInLeft" v-for="(laTarea, indice) in tareas">
+							<b>Tarea: {{ laTarea.text }}</b>
+							<b>Completada: {{ (laTarea.completada) ? 'SI' : 'NO' }}
+							<button v-on:click="completarTarea(indice)">
+								{{ (laTarea.completada) ? 'DESCOMPLETAR' : 'COMPLETAR' }}
+							</button>							
+						</li>
+					</ul>					
 				</div>
 				<input type="text" placeholder="Añadir nueva tarea..." v-model="nuevaTarea" v-on:keyup.enter="agregarTarea">
 				<br/>
 				<button v-on:click="limpiarTareas">Limpiar lista de tareas</button>
 			</div>
 		</main>
-	<script src="first_application.js"></script>
+	<script src="tasks_application.js"></script>
 	</body>
 </html>
