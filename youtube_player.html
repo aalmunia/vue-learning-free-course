@@ -25,18 +25,25 @@
 
 		<div id="listado">
 			<ul>
-				<li class="animated bounceInLeft">
-
+				<li class="animated bounceInLeft" 
+					v-for="(video, indice) in videos"
+					v-on:click="playVideo(video)">
+					<div class="titulo">
+						{{ video.titulo }}
+					</div>
 				</li>
 			</ul>
 		</div>
 
-		<iframe id="rpd" allow="autoplay" src=""></iframe>
+		<iframe width="600" height="600" id="rpd" allow="autoplay" :src="videoActivo"></iframe>
+
+		<br/>
+
+		<button v-on:click="clearVideosCache">Limpiar caché de vídeos</button>
 
 		<div>
 			<pre>Datos del objeto: {{ $data }}</pre>
 		</div>
-
 	</div>
 
 
