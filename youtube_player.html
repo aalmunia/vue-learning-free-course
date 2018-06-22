@@ -1,0 +1,45 @@
+<!-- @todo: Hacer responsive, en el ejercicio lo hace a través de jQuery -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>YouTube reproductor</title>
+		<meta charset="utf-8">		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<div id="menu"></div>		
+
+		<div id="buscador" class="animated fadeIn">			
+			<input type="text" 
+				placeholder="Añade una URL de YouTube..." 
+				v-model="laURL" 
+				v-show="!mostrar" 
+				v-on:keyup.enter="showTitulo">
+			<input type="text" placeholder="Añade un título al vídeo..." 
+				id="ttl" 
+				v-model="elTitulo" 
+				v-show="mostrar"
+				v-on:keyup.enter="addDatos">
+		</div>
+
+		<div id="listado">
+			<ul>
+				<li class="animated bounceInLeft">
+
+				</li>
+			</ul>
+		</div>
+
+		<iframe id="rpd" allow="autoplay" src=""></iframe>
+
+		<div>
+			<pre>Datos del objeto: {{ $data }}</pre>
+		</div>
+
+	</div>
+
+
+	<script src="youtube_player.js"></script>
+	</body>
+</html>

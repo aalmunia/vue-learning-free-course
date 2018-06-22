@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<style>
+			.completada {
+				width: 200px;
+				height: 200px;
+				float: right;
+				background-image: url('https://gsq-blog.gsq.org.au/wp-content/uploads/sites/4/2017/07/Im-finished.jpg');
+				background-repeat: no-repeat;
+				background-size: 200px;
+				margin-top: 6px;
+				color: #AAA;
+			}
+			.tachar {
+				color: #BBB;
+				background-color: #F9F9F9;
+				text-decoration: line-through;
+				border-color: #F9F9F9;
+			}
+		</style>
 		<meta charset="utf-8">
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	</head>
@@ -10,7 +28,7 @@
 				<h1>Mis tareas</h1>
 				<div>
 					<ul>
-						<li class="animated bounceInLeft" v-for="(laTarea, indice) in tareas">
+						<li class="completada animated bounceInLeft" v-for="(laTarea, indice) in tareas" :class="{tachar: laTarea.completada}">
 							<b>Tarea: {{ laTarea.text }}</b>
 							<b>Completada: {{ (laTarea.completada) ? 'SI' : 'NO' }}
 							<button v-on:click="completarTarea(indice)">
@@ -18,8 +36,8 @@
 							</button>							
 						</li>
 					</ul>					
-				</div>
-				<input type="text" placeholder="Añadir nueva tarea..." v-model="nuevaTarea" v-on:keyup.enter="agregarTarea">
+				</div>				
+				<input type="text" placeholder="Añadir nueva tarea..." v-on:keyup.enter="agregarTarea" v-model="nuevaTarea">
 				<br/>
 				<button v-on:click="limpiarTareas">Limpiar lista de tareas</button>
 			</div>
