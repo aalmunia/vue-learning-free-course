@@ -9,8 +9,8 @@
 		<main>
 			<libro 
 				v-bind:titulo="elTitulo"
-				v-bind:autor="elAutor"></libro>
-				<a :href="laURL" target="_blank">{{ elTitulo }}</a>
+				v-bind:autor="elAutor"
+				:url="laURL"></libro>				
 			<pre>{{ $data }}</pre>
 		</main>
 	<script src="propiedades.js"></script>

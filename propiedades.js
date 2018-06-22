@@ -1,6 +1,6 @@
 Vue.component('libro', {
 	props: ['titulo', 'autor', 'url'],
-	template: `<h1>{{ titulo }}</h1>`,
+	template: `<div><h1>{{ titulo }}</h1><br/><h2>{{ autor }}</h2><br/><a :href="url" target="_blank">{{ titulo }}</a></div>`,
 	mounted() {
 		console.log(this.titulo);
 	}
