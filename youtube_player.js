@@ -39,6 +39,11 @@ var vm = new Vue({
 			let laURL = video.url;
 			let nuevaURL = laURL.replace('watch?v=', 'embed/');
 			this.videoActivo = nuevaURL + '?autoplay=1';
+			this.videos.map((video) => { 
+				video.activo = false; 
+				// console.log(video);
+			});
+			video.activo = true;
 		},
 		clearVideosCache: function() {
 			localStorage.removeItem('vue_youtube_app_data');
