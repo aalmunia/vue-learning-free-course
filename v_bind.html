@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.rojo {
+				background-color: red;
+				transition-duration: 1s;
+			}
+			.borde {
+				border: 2px solid #666;
+			}
+		</style>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<main>
+			<!-- Esto de abajo queda rendered como <div title="[DATOS_JS_DATA_PROP]"></div> -->
+			<div v-bind:title="mensaje">
+				Colócate encima de este texto y espera unos segundos para mostrar su título
+			</div>
+			<br/>
+			<!-- El alias corto de v-bind:[ATRIBUTO] es :[ATRIBUTO] -->
+			<img :src="srcImagen" />
+			<br/>
+			<div :class="{rojo:claseRojo, borde:nuevoBorde}" v-on:click="claseRojo = !claseRojo">
+				Pulsa para cambiar el color
+			</div>
+			<br/>			
+		</main>
+	<script src="v_bind.js"></script>
+	</body>
+</html>
