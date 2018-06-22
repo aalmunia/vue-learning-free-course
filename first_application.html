@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		<main>
+			<div id="misTareas">
+				<h1>Mis tareas</h1>
+				<div v-for="(laTarea, indice) in tareas">
+					<b>Descripción de la tarea: </b>
+					<i>{{ laTarea.text }}</i>
+					<b>¿Completada?</b>
+					<i>{{ laTarea.completada }}</i>
+					<button v-on:click="completarTarea(indice)">Completar</button>
+					<button v-on:click="descompletarTarea(indice)">No completa</button>
+				</div>
+				<input type="text" placeholder="Añadir nueva tarea..." v-model="nuevaTarea" v-on:keyup.enter="agregarTarea">
+				<br/>
+				<button v-on:click="limpiarTareas">Limpiar lista de tareas</button>
+			</div>
+		</main>
+	<script src="first_application.js"></script>
+	</body>
+</html>
